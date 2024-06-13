@@ -1,0 +1,70 @@
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<title>Stacja paliw</title>
+<link rel="stylesheet" href="styl2.css">
+
+</head>
+<body>
+<div class="header">
+<h1>Całodobowa stacja paliw</h1>
+</div>
+
+<div class="menu">
+<a href="Stacja.html"><img src="home.png"></a>
+<a href="index.html"><img src="znak.png"></a>
+
+
+</div>
+
+<div class="lewy">
+<h2>Godziny otwarcia stacji</h2>
+<table>
+  <tr>
+    <th>Dzień</th>
+    <th>Od</th>
+    <th>Do</th>
+  </tr>
+  <tr>
+    <td>Pn-Sb</td>
+    <td>6:00</td>
+    <td>24:00</td>
+  </tr>
+  <tr>
+    <td>Nd</td>
+    <td>7:00</td>
+    <td>24:00</td>
+  </tr>
+</table>
+
+<div id="currentTime">
+    
+</div>
+	<script>
+function updateTime() {
+    var now = new Date();
+    var year = now.getFullYear();
+    var month = String(now.getMonth() + 1).padStart(2, '0'); // Miesiące są liczone od 0
+    var day = String(now.getDate()).padStart(2, '0');
+    var hours = String(now.getHours()).padStart(2, '0');
+    var minutes = String(now.getMinutes()).padStart(2, '0');
+    var seconds = String(now.getSeconds()).padStart(2, '0');
+    
+    var currentTime = year + '-' + month + '-' + day + ' ' + hours + ':' + minutes + ':' + seconds;
+    document.getElementById('currentTime').innerHTML = currentTime;
+}
+
+// Aktualizuj czas co sekundę
+setInterval(updateTime, 1000);
+</script>
+	</div>
+<div class="prawy">
+<center><img src="zdjecie.jpg" width="150px" height="150px" alt="samochod"/></center> 
+</div>
+
+<div class="stopka">
+<p> Stronę opracował: Piotr Sosnówka </p>
+</div>
+</body>
+
+</html>
